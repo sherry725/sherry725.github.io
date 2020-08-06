@@ -1,0 +1,16 @@
+<div class="related-post">
+  {% for eachtag in site.tags %}
+    {% if page.tags.first != eachtag.first %}
+      {% continue %}
+    {% endif %}
+
+    <h3 style="font-family: Microsoft YaHei">{{ eachtag.first }} 系列博文</h3>
+    <ul class="arc-list">
+    {% for post in eachtag.last %}
+      <li>
+        {{ post.date | date: '%Y-%m-%d'}}<a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</div>
