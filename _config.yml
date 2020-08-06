@@ -1,11 +1,9 @@
-title: Sherry's Blog 
-author: sherry
-email: shixinwu365 AT hotmail DOT com
-description: > # this means to ignore newlines until "baseurl:"
- 
-baseurl: ""
-twitter_username: 
-github_username:  
+# Basic
+title: Sherry's Blog
+subtitle: Think Free
+welcome_message: Welcome to Sherry's Blog
+description: enjoy life
+creator: <a href="#">@Sherry</a>
 
 defaults:
   -
