@@ -1,28 +1,25 @@
-# Basic
-title: Sherry
-subtitle: 身体和灵魂，必须有一个在路上
-welcome_message: Welcome Sherry's world
-description: 分享技术，分享生活
-creator: <a href="#">@Sherry</a>
+title: Sherry' blog
+author: Sherry
+email: Sherry AT hotmail DOT com
+description: > # this means to ignore newlines until "baseurl:"
+  This is test blog. 
+baseurl: ""
+github_username:  sherry725
 
-url: "http://vno.onevcat.com"
+defaults:
+  -
+    scope:
+      path: "posts" # 一个空的字符串代表项目中所有的文件
+    values:
+      layout: "default"
+      theme: minima
 
-permalink: /:year/:month/:title/
 
-# Format
-highlighter: rouge
+# Build settings
+permalink: /:title.html
+excerpt_separator: "<!-- more -->"
 
-# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
-cover_color: blue
 
-# The blog button should not be removed.
-blog_button:
-    title: Blog列表
-    description: Visit blog
 
-# Navigation buttons in the front page.
-nav:
-    - {title: Projects, description: My Projects, url: 'https://github.com/sherry725/sherry725.github.io'}
-    # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 

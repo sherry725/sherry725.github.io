@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>怎样用 Github Pages 建立博客（1. 入门）</title>
+  <meta name="description" content="本文基于 Jekyll，搭建成功后，博文可以使用 Markdown 进行书写。初级使用者只需初步了解 Github 推送方法，无需 html 相关知识。">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/How-to-build-a-Github-Pages-blog.html">
+  <link rel="alternate" type="application/rss+xml" title="Sherry&#39; blog" href="/feed.xml">
+
+  
+</head>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://localhost:4000/favicon.ico">
+
+  <body>
+    <script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+	  });</script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Sherry&#39; blog</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/tableofcontents/">博文目录 Blog ToC</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">怎样用 Github Pages 建立博客（1. 入门）</h1>
+    <p class="post-meta">
+      <time datetime="2017-01-07T00:00:00+08:00" itemprop="datePublished">2017-01-07</time>
+      
+      
+        Categories：
+                <a href="http://localhost:4000/categories#Jekyll">Jekyll</a>; 
+                
+              
+      
+    </p>
+  </header>
+
+<div class="related-post">
+  
+    
+
+    <h3 style="font-family: Microsoft YaHei">create-blog 系列博文</h3>
+    <ul class="arc-list">
+    
+        <li>
+          2017-01-07
+          <a href="/How-to-build-a-Github-Pages-blog.html">怎样用 Github Pages 建立博客（1. 入门）</a>
+           <<<< 当前 
+        </li>
+    
+  </ul>
+  
+</div>
+
+  <aside class="sidebar">
+  <p><i>Tips</i></p>
+  <p><i>本站</i></p>
+  
+  <h2>【目录ToC】</h2>
+  <script src="/js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="/js/toc.js"></script>
+  <div id="toc"></div>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    $('#toc').toc();
+  });
+  </script>
+
+  <div>
+    <p><i>sidebar</i></p>
+    <br></br>
+  </div>
+
+</aside>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>本文基于 Jekyll，搭建成功后，博文可以使用 Markdown 进行书写。初级使用者只需初步了解 Github 推送方法，无需 html 相关知识。</p>
+
+<!-- more -->
+
+<h2 id="安装-ruby-和-dev-kit">安装 Ruby 和 dev-kit</h2>
+
+<p>前往 <a href="http://rubyinstaller.org/downloads/">Ruby 站点</a> 下载 Ruby，下载Ruby后，将页面下拉，下载符合版本要求的 Development Kit. 在本文的测试中，环境是 Windows 10 x64，Ruby 版本 2.3.3 x64，dev-kit 版本 DevKit-mingw64-64-4.7.2-20130224-1432-sfx.</p>
+
+<p>安装 Ruby；将 dev-kit 解压到指定目录即完成安装。</p>
+
+<h2 id="安装-jekyll-和-bundle">安装 Jekyll 和 Bundle</h2>
+<p>请确保电脑的 Internet 连接正常。转到 dev-kit 目录，空白处Shift+鼠标右键呼出运行cmd，输入：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby dk.rb init
+ruby dk.rb install
+gem install jekyll
+gem install bundle
+</code></pre></div></div>
+
+<p>下载和安装会自动进行。</p>
+
+<h2 id="初始化博客文件夹">初始化博客文件夹</h2>
+
+<p><strong>以下初始化内容可以通过 fork 对应的<a href="https://pages.github.com/themes/">主题仓库</a>完成。</strong></p>
+
+<p>切换到 <em>username</em>.github.io 仓库所在本地文件夹，进行普通的初始化。使用 bash 命令输入（以我的博客为例）：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+git remote add origin https://github.com/wklchris/wklchris.github.io.git
+</code></pre></div></div>
+
+<p>然后进行一系列的新建操作：</p>
+
+<ul>
+  <li>_includes 文件夹</li>
+  <li>_layouts 文件夹，内含default.html，留空。</li>
+  <li>_posts 文件夹</li>
+  <li>_site 文件夹</li>
+  <li>_config.yml 文件，内容：</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title: wklchris 的博客 - wklchris' blog
+author: wklchris
+email: wklchris AT hotmail DOT com
+description: &gt; # this means to ignore newlines until "baseurl:"
+  [页面右下角文字]
+baseurl: ""
+twitter_username: wklchris
+github_username:  wklchris
+
+defaults:
+  -
+    scope:
+      path: "posts" # 空字符串所有的文件。这里指posts文件夹
+    values:
+      layout: "default"
+      theme: minima
+      permalink: date  # 这是指博客文章的网址格式
+
+# Build settings
+markdown: kramdown
+theme: minima
+exclude:
+  - Gemfile
+  - Gemfile.lock
+</code></pre></div></div>
+
+<ul>
+  <li>index.html 文件：</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>layout: home
+</code></pre></div></div>
+
+<ul>
+  <li>gemfile 文件，内容（墙内可能需要改成 http://ruby.taobao.org/ ）。其中第二行是我使用的主题，参考<a href="https://pages.github.com/themes/">此页面</a>。</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source "https://rubygems.org"
+
+gem "minima"
+</code></pre></div></div>
+
+<p>关于 Github 仓库，你还可能需要的文件有：</p>
+
+<ul>
+  <li>.gitignore 文件：屏蔽 _site 和 .sass-cache 文件夹。</li>
+  <li>readme.md 文件</li>
+</ul>
+
+<h2 id="写博文">写博文</h2>
+
+<p>在 posts 文件夹内新建一个 Markdown 文件，文件名形如：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1900-01-20-this-is-the-title.md
+</code></pre></div></div>
+
+<p>然后用 Markdown 进行书写即可。注意要加上文件头：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: post
+title: 怎样用 Github Pages 来建立一个博客
+---
+</code></pre></div></div>
+
+<p>如果在文件头中不更改 parmalink 属性，那么该博文发布后的网址将是：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>username.github.io/1900/01/20/this-is-the-title.html
+</code></pre></div></div>
+
+<h2 id="添加-disqus-评论区">添加 Disqus 评论区</h2>
+
+<p><em>注：该评论区在非production环境（比如本地调试）下不能显示。</em></p>
+
+<p>该模板针对 Disqus 专门做出了优化，只需要在 _config.yml 中添加：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>disqus:
+  shortname: my_disqus_shortname
+</code></pre></div></div>
+
+<p>即可。注意将你注册的 Disqus 账号对应博客网址的短id正确填写。</p>
+
+<h2 id="发布前的测试">发布前的测试</h2>
+
+<p>仍然是仓库文件夹，在cmd命令下输入：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle install
+bundle exec jekyll serve
+</code></pre></div></div>
+
+<p>如果后续对 _config.yml 文件进行了修改，就需要执行第一行；否则只用执行第二行即可。</p>
+
+<p>此时服务器会运行，你可以通过访问 <a href="http://127.0.0.1:4000">http://127.0.0.1:4000</a> 预览你的博客页面。</p>
+
+<p>如果不想测试，可以直接：<code class="language-plaintext highlighter-rouge">jekyll build</code> 之后，将本地 git 推送。</p>
+
+<h2 id="其他">其他</h2>
+
+<ol>
+  <li>如果在仓库目录下新建一个 assets 文件夹，内放 main.scss 的文件，即可对一些细节进行定义。</li>
+  <li>layout 文件夹可以留空，但也可以从主题所在的 Github 仓库克隆。你也可以自定义新的 layout.</li>
+  <li>
+    <p>对于 iOS 系统，需要改动 _layouts/header.html 。本条由 Snowkylin 指出。</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="menu-icon"&gt;
+</code></pre></div>    </div>
+
+    <p>换成：</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="menu-icon" onclick = "void(0)"&gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>其他具体的文件内容参考<a href="https://github.com/wklchris/wklchris.github.io">本博客的 Github 仓库</a>，或者直接 fork。</p>
+
+  </div>
+  
+  <a href="javascript:scroll(0,0)">--【 返回顶部 】--</a>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <!-- Bootstrap & Search Support -->
+  <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <div class="cb-search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
+        opacity: 0.95; background-color: #222222; z-index: 9999; display: none;">
+      <input type="text" class="form-control cb-search-content" id="cb-search-content" style="position: fixed; top: 60px" placeholder="搜索（文章标题、系列名称）..." >
+
+      <div style="position: fixed; top: 16px; right: 16px;">
+          <img src="/search/img/cb-close.png"  id="cb-close-btn"/>
+      </div>
+  </div>
+
+  <div style="position: fixed; right: 20px; bottom: 20px;">
+      <img src="/search/img/cb-search.png"  id="cb-search-btn"  title="双击ctrl试一下"/>
+  </div>
+
+  <link rel="stylesheet" href="/search/css/cb-search.css">
+
+  <script src="/search/js/bootstrap3-typeahead.min.js"></script>
+  <script src="/search/js/cb-search.js"></script>
+
+  <!-- Back to top button-->
+  <div style="position: fixed; right: 20px; bottom: 70px; width: 32px; height: 30px">
+    <a href="javascript:scroll(0,0)">
+      <img src="/assets/back-to-top.png" id="back-to-top-btn" title="返回顶部"/>
+    </a>
+  </div>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Sherry&#39; blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Sherry
+            
+            </li>
+            
+            <li><a href="mailto:Sherry AT hotmail DOT com">Sherry AT hotmail DOT com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/sherry725"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">sherry725</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is test blog. 
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

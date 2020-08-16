@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sherry&#39; blog</title>
-  <meta name="description" content="This is test blog.">
+  <title>怎样用 Github Pages 来建立一个博客</title>
+  <meta name="description" content="">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/first-post.html">
   <link rel="alternate" type="application/rss+xml" title="Sherry&#39; blog" href="/feed.xml">
 
   
@@ -61,88 +61,56 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading"> Test Blog (For English posts, check: <a href="https://github.com/sherry725">Sherry repo</a>)</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">怎样用 Github Pages 来建立一个博客</h1>
+    <p class="post-meta">
+      <time datetime="2020-08-06T00:00:00+08:00" itemprop="datePublished">2020-08-06</time>
+      
+      
+        Categories：
+      
+    </p>
+  </header>
+
+<div class="related-post">
   
-  
-
-
-  <ul class="post-list">
     
-      <li>
-        <h2><a class="post-link" href="/first-post.html">怎样用 Github Pages 来建立一个博客</a></h2>
-        
-		
-		<p class="post-meta">
-      <span class="post-meta">2020-08-06</span>
       
-      
-      Categories: 
-		</p>
-		
-
-		
-
-      </li>
-    
-      <li>
-        <h2><a class="post-link" href="/How-to-build-a-Github-Pages-blog.html">怎样用 Github Pages 建立博客（1. 入门）</a></h2>
-        
-		
-		<p class="post-meta">
-      <span class="post-meta">2017-01-07</span>
-      
-      
-      Categories: 
-        <a href="http://localhost:4000/categories#Jekyll">Jekyll</a>; 
-      
-		</p>
-		
-
-		本文基于 Jekyll，搭建成功后，博文可以使用 Markdown 进行书写。初级使用者只需初步了解 Github 推送方法，无需 html 相关知识。
-
-
-      </li>
-    
-  </ul>
+</div>
 
   <aside class="sidebar">
-
   <p><i>Tips</i></p>
   <p><i>本站</i></p>
+  
+  <h2>【目录ToC】</h2>
   <script src="/js/jquery-1.7.2.min.js"></script>
-  
-  <div class="author-info">
-    <div style="float: left">
-    </div>
-    <div style="float: left; padding-left: 20px; padding-top: 20px;">
-      <p style="text-align: right"><h2>Sherry</h2><p>
-    </div>
-
-    <table>
-      <tr><th>Blog</th><th>Category</th><th>Year</th></tr>
-      <tr><td>2</td><td>1</td><td>2017</td></tr>
-    </table>  
-  </div>
-
-  <h3 id="post-categories">Posts</h3>
-  <ul class="arc-list">
-  
-  
-      <li><a href="/categories/#Jekyll">Jekyll </a>(1)</li>
-    
-  </ul>
+  <script type="text/javascript" src="/js/toc.js"></script>
+  <div id="toc"></div>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    $('#toc').toc();
+  });
+  </script>
 
   <div>
-    <p><i>ToC sidebar.</i></p>
+    <p><i>sidebar</i></p>
     <br></br>
   </div>
+
 </aside>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  <div class="post-content" itemprop="articleBody">
+    
 
-</div>
+  </div>
+  
+  <a href="javascript:scroll(0,0)">--【 返回顶部 】--</a>
+
+  
+</article>
+
       </div>
     </main>
 
