@@ -1,0 +1,115 @@
+I"�<p>Refer to wklchris’s blog to build the Github Page based on Jekyll.
+After building the Github Page, blogs can be written using Markdown.</p>
+
+<!-- more -->
+
+<h2 id="install-ruby-and-dev-kit">Install Ruby and dev-kit</h2>
+
+<p>Go to <a href="http://rubyinstaller.org/downloads/">Ruby Site</a> to download and install Ruby with Development Kit, For example rubyinstaller-devkit-2.6.6-1-x64.</p>
+
+<h2 id="install-jekyll-and-bundle">Install Jekyll and Bundle</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmd cd C:\\Ruby26-x64
+gem install jekyll
+gem install bundle
+</code></pre></div></div>
+
+<h2 id="blog-folders-initialization">Blog Folders Initialization</h2>
+
+<p>Create following new folders in username.github.io：</p>
+
+<ul>
+  <li>_includes</li>
+  <li>_layouts create a file: default.html (blank)</li>
+  <li>_posts</li>
+  <li>_site</li>
+</ul>
+
+<p>Create a file:</p>
+<ul>
+  <li>_config.yml , content：</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title: Sherry' blog
+author: Sherry
+email: Sherry AT hotmail DOT com
+description: &gt; # this means to ignore newlines until "baseurl:"
+
+baseurl: ""
+github_username:  sherry725
+
+defaults:
+  -
+    scope:
+      path: "posts" #Indicate foler of posts 
+    values:
+      layout: "default"
+      theme: minima
+
+
+# Build settings
+permalink: /:title.html
+excerpt_separator: "&lt;!-- more --&gt;"
+
+</code></pre></div></div>
+
+<p>Create another file</p>
+<ul>
+  <li>index.md, content：</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>layout: home
+</code></pre></div></div>
+
+<p>Create another file with type of File (no any .xxx)</p>
+<ul>
+  <li>Gemfile</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># frozen_string_literal: true
+
+source "https://rubygems.org"
+
+gem "minima"
+
+# gem "rails"
+</code></pre></div></div>
+
+<h2 id="write-blogs">Write Blogs</h2>
+
+<p>Create a Markdown file in folder of _posts, name of the file is like：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1900-01-01-this-is-the-title.md
+</code></pre></div></div>
+
+<p>Add following heading：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: post
+title: How to Build a Github Page
+category: Jekyll
+tag: create-blog
+---
+</code></pre></div></div>
+
+<p>If you don’t change the parmalink property at the heading，then the website of the blog is：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>username.github.io/this-is-the-title.html
+</code></pre></div></div>
+
+<h2 id="test-before-publishing">Test before publishing</h2>
+
+<p>cmd cd username.github.io</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle install
+bundle exec jekyll serve
+</code></pre></div></div>
+
+<p>if you edit _config.yml, you need to execute the first line; otherwise you just need to execute the second line.</p>
+
+<p>Now you can preview your blog through <a href="http://127.0.0.1:4000">http://127.0.0.1:4000</a>.</p>
+
+<p>If you don’t want to preview, just execute <code class="language-plaintext highlighter-rouge">jekyll build</code> and push through git.</p>
+
+<h2 id="others">Others</h2>
+<p><a href="https://github.com/sherry725/sherry725.github.io">My Github Repository</a></p>
+:ET

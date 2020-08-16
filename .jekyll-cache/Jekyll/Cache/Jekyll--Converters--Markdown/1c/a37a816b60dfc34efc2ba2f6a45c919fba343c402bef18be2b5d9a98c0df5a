@@ -1,0 +1,144 @@
+I"~<p>Refer to wklchris’s blog to build the Github Page based on Jekyll.
+After building the Github Page, blogs can be written using Markdown.</p>
+
+<!-- more -->
+
+<h2 id="install-ruby-and-dev-kit">Install Ruby and dev-kit</h2>
+
+<p>Go to <a href="http://rubyinstaller.org/downloads/">Ruby Site</a> to download and install Ruby with Development Kit, For example rubyinstaller-devkit-2.6.6-1-x64.</p>
+
+<h2 id="install-jekyll-and-bundle">Install Jekyll and Bundle</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmd cd C:\\Ruby26-x64
+gem install jekyll
+gem install bundle
+</code></pre></div></div>
+
+<h2 id="blog-folders-initialization">Blog Folders Initialization</h2>
+
+<p>Create following new folders in username.github.io：</p>
+
+<ul>
+  <li>_includes</li>
+  <li>_layouts create a file: default.html (blank)</li>
+  <li>_posts</li>
+  <li>_site</li>
+</ul>
+
+<p>Create a file:</p>
+<ul>
+  <li>_config.yml , content：</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title: Sherry' blog
+author: Sherry
+email: Sherry AT hotmail DOT com
+description: &gt; # this means to ignore newlines until "baseurl:"
+
+baseurl: ""
+github_username:  sherry725
+
+defaults:
+  -
+    scope:
+      path: "posts" #Indicate foler of posts 
+    values:
+      layout: "default"
+      theme: minima
+
+
+# Build settings
+permalink: /:title.html
+excerpt_separator: "&lt;!-- more --&gt;"
+
+</code></pre></div></div>
+
+<p>Create another file</p>
+<ul>
+  <li>index.md, content：</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>layout: home
+</code></pre></div></div>
+
+<p>Create another file with type of File (no any .xxx)</p>
+<ul>
+  <li>Gemfile</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># frozen_string_literal: true
+
+source "https://rubygems.org"
+
+gem "minima"
+
+# gem "rails"
+</code></pre></div></div>
+
+<h2 id="write-blogs">Write Blogs</h2>
+
+<p>Create a Markdown file in folder of _posts, name of the file is like：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1900-01-01-this-is-the-title.md
+</code></pre></div></div>
+
+<p>Add following heading：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: post
+title: How to Build a Github Page
+category: Jekyll
+tag: create-blog
+---
+</code></pre></div></div>
+
+<p>If you don’t change the parmalink property at the heading，then the website of the blog is：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>username.github.io/this-is-the-title.html
+</code></pre></div></div>
+
+<h2 id="添加-disqus-评论区">添加 Disqus 评论区</h2>
+
+<p><em>注：该评论区在非production环境（比如本地调试）下不能显示。</em></p>
+
+<p>该模板针对 Disqus 专门做出了优化，只需要在 _config.yml 中添加：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>disqus:
+  shortname: my_disqus_shortname
+</code></pre></div></div>
+
+<p>即可。注意将你注册的 Disqus 账号对应博客网址的短id正确填写。</p>
+
+<h2 id="发布前的测试">发布前的测试</h2>
+
+<p>仍然是仓库文件夹，在cmd命令下输入：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle install
+bundle exec jekyll serve
+</code></pre></div></div>
+
+<p>如果后续对 _config.yml 文件进行了修改，就需要执行第一行；否则只用执行第二行即可。</p>
+
+<p>此时服务器会运行，你可以通过访问 <a href="http://127.0.0.1:4000">http://127.0.0.1:4000</a> 预览你的博客页面。</p>
+
+<p>如果不想测试，可以直接：<code class="language-plaintext highlighter-rouge">jekyll build</code> 之后，将本地 git 推送。</p>
+
+<h2 id="其他">其他</h2>
+
+<ol>
+  <li>如果在仓库目录下新建一个 assets 文件夹，内放 main.scss 的文件，即可对一些细节进行定义。</li>
+  <li>layout 文件夹可以留空，但也可以从主题所在的 Github 仓库克隆。你也可以自定义新的 layout.</li>
+  <li>
+    <p>对于 iOS 系统，需要改动 _layouts/header.html 。本条由 Snowkylin 指出。</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="menu-icon"&gt;
+</code></pre></div>    </div>
+
+    <p>换成：</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="menu-icon" onclick = "void(0)"&gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>其他具体的文件内容参考<a href="https://github.com/wklchris/wklchris.github.io">本博客的 Github 仓库</a>，或者直接 fork。</p>
+:ET

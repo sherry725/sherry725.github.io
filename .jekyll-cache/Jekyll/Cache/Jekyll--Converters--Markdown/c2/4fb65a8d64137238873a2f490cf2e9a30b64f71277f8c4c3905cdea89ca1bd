@@ -1,98 +1,85 @@
-I"�<p>本文基于 Jekyll，搭建成功后，博文可以使用 Markdown 进行书写。初级使用者只需初步了解 Github 推送方法，无需 html 相关知识。</p>
+I"�<p>Refer to wklchris’s blog to build the Github Page based on Jekyll.
+After building the Github Page, blogs can be written using Markdown.</p>
 
 <!-- more -->
 
-<h2 id="安装-ruby-和-dev-kit">安装 Ruby 和 dev-kit</h2>
+<h2 id="install-ruby-and-dev-kit">Install Ruby and dev-kit</h2>
 
-<p>前往 <a href="http://rubyinstaller.org/downloads/">Ruby 站点</a> 下载 Ruby，下载Ruby后，将页面下拉，下载符合版本要求的 Development Kit. 在本文的测试中，环境是 Windows 10 x64，Ruby 版本 2.3.3 x64，dev-kit 版本 DevKit-mingw64-64-4.7.2-20130224-1432-sfx.</p>
+<p>Go to <a href="http://rubyinstaller.org/downloads/">Ruby Site</a> to download and install Ruby with Development Kit, For example rubyinstaller-devkit-2.6.6-1-x64.</p>
 
-<p>安装 Ruby；将 dev-kit 解压到指定目录即完成安装。</p>
+<h2 id="install-jekyll-and-bundle">Install Jekyll and Bundle</h2>
 
-<h2 id="安装-jekyll-和-bundle">安装 Jekyll 和 Bundle</h2>
-<p>请确保电脑的 Internet 连接正常。转到 dev-kit 目录，空白处Shift+鼠标右键呼出运行cmd，输入：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby dk.rb init
-ruby dk.rb install
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmd cd C:\\Ruby26-x64
 gem install jekyll
 gem install bundle
 </code></pre></div></div>
 
-<p>下载和安装会自动进行。</p>
+<h2 id="blog-folders-initialization">Blog Folders Initialization</h2>
 
-<h2 id="初始化博客文件夹">初始化博客文件夹</h2>
-
-<p><strong>以下初始化内容可以通过 fork 对应的<a href="https://pages.github.com/themes/">主题仓库</a>完成。</strong></p>
-
-<p>切换到 <em>username</em>.github.io 仓库所在本地文件夹，进行普通的初始化。使用 bash 命令输入（以我的博客为例）：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
-git remote add origin https://github.com/wklchris/wklchris.github.io.git
-</code></pre></div></div>
-
-<p>然后进行一系列的新建操作：</p>
+<p>Create following new folders in username.github.io：</p>
 
 <ul>
-  <li>_includes 文件夹</li>
-  <li>_layouts 文件夹，内含default.html，留空。</li>
-  <li>_posts 文件夹</li>
-  <li>_site 文件夹</li>
-  <li>_config.yml 文件，内容：</li>
+  <li>_includes</li>
+  <li>_layouts create a file: default.html (blank)</li>
+  <li>_posts</li>
+  <li>_site</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title: wklchris 的博客 - wklchris' blog
-author: wklchris
-email: wklchris AT hotmail DOT com
+<p>Create a file:</p>
+<ul>
+  <li>_config.yml , content：</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title: Sherry' blog
+author: Sherry
+email: Sherry AT hotmail DOT com
 description: &gt; # this means to ignore newlines until "baseurl:"
-  [页面右下角文字]
+
 baseurl: ""
-twitter_username: wklchris
-github_username:  wklchris
+github_username:  sherry725
 
 defaults:
   -
     scope:
-      path: "posts" # 空字符串所有的文件。这里指posts文件夹
+      path: "posts" #Indicate foler of posts 
     values:
       layout: "default"
       theme: minima
-      permalink: date  # 这是指博客文章的网址格式
+
 
 # Build settings
-markdown: kramdown
-theme: minima
-exclude:
-  - Gemfile
-  - Gemfile.lock
+permalink: /:title.html
+excerpt_separator: "&lt;!-- more --&gt;"
+
 </code></pre></div></div>
 
+<p>Create another file</p>
 <ul>
-  <li>index.html 文件：</li>
+  <li>index.md, content：</li>
 </ul>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>layout: home
 </code></pre></div></div>
 
+<p>Create another file with type of File (no any .xxx)</p>
 <ul>
-  <li>gemfile 文件，内容（墙内可能需要改成 http://ruby.taobao.org/ ）。其中第二行是我使用的主题，参考<a href="https://pages.github.com/themes/">此页面</a>。</li>
+  <li>Gemfile</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source "https://rubygems.org"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># frozen_string_literal: true
+
+source "https://rubygems.org"
 
 gem "minima"
+
+# gem "rails"
 </code></pre></div></div>
 
-<p>关于 Github 仓库，你还可能需要的文件有：</p>
+<h2 id="write-blogs">Write Blogs</h2>
 
-<ul>
-  <li>.gitignore 文件：屏蔽 _site 和 .sass-cache 文件夹。</li>
-  <li>readme.md 文件</li>
-</ul>
+<p>Create a Markdown file in folder of _posts, name of the file is like：</p>
 
-<h2 id="写博文">写博文</h2>
-
-<p>在 posts 文件夹内新建一个 Markdown 文件，文件名形如：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1900-01-20-this-is-the-title.md
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1900-01-01-this-is-the-title.md
 </code></pre></div></div>
 
 <p>然后用 Markdown 进行书写即可。注意要加上文件头：</p>

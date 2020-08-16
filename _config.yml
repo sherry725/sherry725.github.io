@@ -2,14 +2,14 @@ title: Sherry' blog
 author: Sherry
 email: Sherry AT hotmail DOT com
 description: > # this means to ignore newlines until "baseurl:"
-  This is test blog. 
+
 baseurl: ""
 github_username:  sherry725
 
 defaults:
   -
     scope:
-      path: "posts" # 一个空的字符串代表项目中所有的文件
+      path: "posts" #Indicate foler of posts 
     values:
       layout: "default"
       theme: minima

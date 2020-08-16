@@ -6,18 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>怎样用 Github Pages 建立博客（1. 入门）</title>
-  <meta name="description" content="本文基于 Jekyll，搭建成功后，博文可以使用 Markdown 进行书写。初级使用者只需初步了解 Github 推送方法，无需 html 相关知识。">
+  <title>How to Build a Github Page</title>
+  <meta name="description" content="Refer to wklchris’s blog to build the Github Page based on Jekyll. After building the Github Page, blogs can be written using Markdown.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/How-to-build-a-Github-Pages-blog.html">
+  <link rel="canonical" href="http://localhost:4000/How-to-Build-a-Github-Page.html">
   <link rel="alternate" type="application/rss+xml" title="Sherry&#39; blog" href="/feed.xml">
 
   
 </head>
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="http://localhost:4000/favicon.ico">
 
   <body>
     <script type="text/x-mathjax-config">
@@ -64,13 +64,13 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">怎样用 Github Pages 建立博客（1. 入门）</h1>
+    <h1 class="post-title" itemprop="name headline">How to Build a Github Page</h1>
     <p class="post-meta">
-      <time datetime="2017-01-07T00:00:00+08:00" itemprop="datePublished">2017-01-07</time>
+      <time datetime="2020-08-16T00:00:00+08:00" itemprop="datePublished">2020-08-16</time>
       
       
         Categories：
-                <a href="/categories#Jekyll">Jekyll</a>; 
+                <a href="http://localhost:4000/categories#Jekyll">Jekyll</a>; 
                 
               
       
@@ -85,8 +85,8 @@
     <ul class="arc-list">
     
         <li>
-          2017-01-07
-          <a href="/How-to-build-a-Github-Pages-blog.html">怎样用 Github Pages 建立博客（1. 入门）</a>
+          2020-08-16
+          <a href="/How-to-Build-a-Github-Page.html">How to Build a Github Page</a>
            <<<< 当前 
         </li>
     
@@ -116,160 +116,120 @@
 </aside>
 
   <div class="post-content" itemprop="articleBody">
-    <p>本文基于 Jekyll，搭建成功后，博文可以使用 Markdown 进行书写。初级使用者只需初步了解 Github 推送方法，无需 html 相关知识。</p>
+    <p>Refer to wklchris’s blog to build the Github Page based on Jekyll.
+After building the Github Page, blogs can be written using Markdown.</p>
 
 <!-- more -->
 
-<h2 id="安装-ruby-和-dev-kit">安装 Ruby 和 dev-kit</h2>
+<h2 id="install-ruby-and-dev-kit">Install Ruby and dev-kit</h2>
 
-<p>前往 <a href="http://rubyinstaller.org/downloads/">Ruby 站点</a> 下载 Ruby，下载Ruby后，将页面下拉，下载符合版本要求的 Development Kit. 在本文的测试中，环境是 Windows 10 x64，Ruby 版本 2.3.3 x64，dev-kit 版本 DevKit-mingw64-64-4.7.2-20130224-1432-sfx.</p>
+<p>Go to <a href="http://rubyinstaller.org/downloads/">Ruby Site</a> to download and install Ruby with Development Kit, For example rubyinstaller-devkit-2.6.6-1-x64.</p>
 
-<p>安装 Ruby；将 dev-kit 解压到指定目录即完成安装。</p>
+<h2 id="install-jekyll-and-bundle">Install Jekyll and Bundle</h2>
 
-<h2 id="安装-jekyll-和-bundle">安装 Jekyll 和 Bundle</h2>
-<p>请确保电脑的 Internet 连接正常。转到 dev-kit 目录，空白处Shift+鼠标右键呼出运行cmd，输入：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby dk.rb init
-ruby dk.rb install
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmd cd C:\\Ruby26-x64
 gem install jekyll
 gem install bundle
 </code></pre></div></div>
 
-<p>下载和安装会自动进行。</p>
+<h2 id="blog-folders-initialization">Blog Folders Initialization</h2>
 
-<h2 id="初始化博客文件夹">初始化博客文件夹</h2>
-
-<p><strong>以下初始化内容可以通过 fork 对应的<a href="https://pages.github.com/themes/">主题仓库</a>完成。</strong></p>
-
-<p>切换到 <em>username</em>.github.io 仓库所在本地文件夹，进行普通的初始化。使用 bash 命令输入（以我的博客为例）：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
-git remote add origin https://github.com/wklchris/wklchris.github.io.git
-</code></pre></div></div>
-
-<p>然后进行一系列的新建操作：</p>
+<p>Create following new folders in username.github.io：</p>
 
 <ul>
-  <li>_includes 文件夹</li>
-  <li>_layouts 文件夹，内含default.html，留空。</li>
-  <li>_posts 文件夹</li>
-  <li>_site 文件夹</li>
-  <li>_config.yml 文件，内容：</li>
+  <li>_includes</li>
+  <li>_layouts create a file: default.html (blank)</li>
+  <li>_posts</li>
+  <li>_site</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title: wklchris 的博客 - wklchris' blog
-author: wklchris
-email: wklchris AT hotmail DOT com
+<p>Create a file:</p>
+<ul>
+  <li>_config.yml , content：</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title: Sherry' blog
+author: Sherry
+email: Sherry AT hotmail DOT com
 description: &gt; # this means to ignore newlines until "baseurl:"
-  [页面右下角文字]
+
 baseurl: ""
-twitter_username: wklchris
-github_username:  wklchris
+github_username:  sherry725
 
 defaults:
   -
     scope:
-      path: "posts" # 空字符串所有的文件。这里指posts文件夹
+      path: "posts" #Indicate foler of posts 
     values:
       layout: "default"
       theme: minima
-      permalink: date  # 这是指博客文章的网址格式
+
 
 # Build settings
-markdown: kramdown
-theme: minima
-exclude:
-  - Gemfile
-  - Gemfile.lock
+permalink: /:title.html
+excerpt_separator: "&lt;!-- more --&gt;"
+
 </code></pre></div></div>
 
+<p>Create another file</p>
 <ul>
-  <li>index.html 文件：</li>
+  <li>index.md, content：</li>
 </ul>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>layout: home
 </code></pre></div></div>
 
+<p>Create another file with type of File (no any .xxx)</p>
 <ul>
-  <li>gemfile 文件，内容（墙内可能需要改成 http://ruby.taobao.org/ ）。其中第二行是我使用的主题，参考<a href="https://pages.github.com/themes/">此页面</a>。</li>
+  <li>Gemfile</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source "https://rubygems.org"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># frozen_string_literal: true
+
+source "https://rubygems.org"
 
 gem "minima"
+
+# gem "rails"
 </code></pre></div></div>
 
-<p>关于 Github 仓库，你还可能需要的文件有：</p>
+<h2 id="write-blogs">Write Blogs</h2>
 
-<ul>
-  <li>.gitignore 文件：屏蔽 _site 和 .sass-cache 文件夹。</li>
-  <li>readme.md 文件</li>
-</ul>
+<p>Create a Markdown file in folder of _posts, name of the file is like：</p>
 
-<h2 id="写博文">写博文</h2>
-
-<p>在 posts 文件夹内新建一个 Markdown 文件，文件名形如：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1900-01-20-this-is-the-title.md
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1900-01-01-this-is-the-title.md
 </code></pre></div></div>
 
-<p>然后用 Markdown 进行书写即可。注意要加上文件头：</p>
+<p>Add following heading：</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: post
-title: 怎样用 Github Pages 来建立一个博客
+title: How to Build a Github Page
+category: Jekyll
+tag: create-blog
 ---
 </code></pre></div></div>
 
-<p>如果在文件头中不更改 parmalink 属性，那么该博文发布后的网址将是：</p>
+<p>If you don’t change the parmalink property at the heading，then the website of the blog is：</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>username.github.io/1900/01/20/this-is-the-title.html
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>username.github.io/this-is-the-title.html
 </code></pre></div></div>
 
-<h2 id="添加-disqus-评论区">添加 Disqus 评论区</h2>
+<h2 id="test-before-publishing">Test before publishing</h2>
 
-<p><em>注：该评论区在非production环境（比如本地调试）下不能显示。</em></p>
-
-<p>该模板针对 Disqus 专门做出了优化，只需要在 _config.yml 中添加：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>disqus:
-  shortname: my_disqus_shortname
-</code></pre></div></div>
-
-<p>即可。注意将你注册的 Disqus 账号对应博客网址的短id正确填写。</p>
-
-<h2 id="发布前的测试">发布前的测试</h2>
-
-<p>仍然是仓库文件夹，在cmd命令下输入：</p>
+<p>cmd cd username.github.io</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle install
 bundle exec jekyll serve
 </code></pre></div></div>
 
-<p>如果后续对 _config.yml 文件进行了修改，就需要执行第一行；否则只用执行第二行即可。</p>
+<p>if you edit _config.yml, you need to execute the first line; otherwise you just need to execute the second line.</p>
 
-<p>此时服务器会运行，你可以通过访问 <a href="http://127.0.0.1:4000">http://127.0.0.1:4000</a> 预览你的博客页面。</p>
+<p>Now you can preview your blog through <a href="http://127.0.0.1:4000">http://127.0.0.1:4000</a>.</p>
 
-<p>如果不想测试，可以直接：<code class="language-plaintext highlighter-rouge">jekyll build</code> 之后，将本地 git 推送。</p>
+<p>If you don’t want to preview, just execute <code class="language-plaintext highlighter-rouge">jekyll build</code> and push through git.</p>
 
-<h2 id="其他">其他</h2>
-
-<ol>
-  <li>如果在仓库目录下新建一个 assets 文件夹，内放 main.scss 的文件，即可对一些细节进行定义。</li>
-  <li>layout 文件夹可以留空，但也可以从主题所在的 Github 仓库克隆。你也可以自定义新的 layout.</li>
-  <li>
-    <p>对于 iOS 系统，需要改动 _layouts/header.html 。本条由 Snowkylin 指出。</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="menu-icon"&gt;
-</code></pre></div>    </div>
-
-    <p>换成：</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="menu-icon" onclick = "void(0)"&gt;
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<p>其他具体的文件内容参考<a href="https://github.com/wklchris/wklchris.github.io">本博客的 Github 仓库</a>，或者直接 fork。</p>
+<h2 id="others">Others</h2>
+<p><a href="https://github.com/sherry725/sherry725.github.io">My Github Repository</a></p>
 
   </div>
   
@@ -344,8 +304,7 @@ bundle exec jekyll serve
       </div>
 
       <div class="footer-col footer-col-3">
-        <p>This is test blog. 
-</p>
+        <p></p>
       </div>
     </div>
 
