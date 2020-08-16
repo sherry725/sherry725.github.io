@@ -4,7 +4,7 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading"> Test Blog (For English posts, check: <a href="https://github.com/sherry725">Sherry repo</a>)</h1>
+  <h1 class="page-heading"> Sherry's Blog, check: <a href="https://github.com/sherry725">Sherry's repo</a>)</h1>
   
   {{ content }}
 
@@ -20,7 +20,7 @@ layout: default
         <li>{{ post.date | date: '%Y-%m-%d'}} <a href="{{ post.url }}">{{ post.title }}</a></li>
       {% endfor %}
       {% if post.update %}
-          [更新: {{ post.update }}]
+          [Update: {{ post.update }}]
       {% endif %}
       Categories: {% for category in post.categories %}
         <a href="{{ site.url }}/categories#{{ category }}">{{ category | escape }}</a>; 

@@ -1,11 +1,11 @@
 ---
 layout: page
-title: 博文目录 Blog ToC
+title: Blog ToC
 permalink: /tableofcontents/
 ---
 
 <div>
-  <p><i>鼠标悬停于标题链接上方，以预览博文摘要。<br>标题名右侧方括号中的是最后更新时间。</i></p>
+  <p><i>More Notes to be Updated <br> More Notes to be Updated </i></p>
 </div>
 
 <ul>
