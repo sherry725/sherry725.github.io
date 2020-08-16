@@ -2,7 +2,7 @@
 layout: page
 ---
 
-<p style="margin-top: 10px"><i>鼠标悬停于标题链接上方，以预览博文摘要。</i></p>
+<p style="margin-top: 10px"><i> More Notes to be Added </i></p>
 
 {% assign sorted_cat = site.categories | sort %}
 
@@ -14,7 +14,7 @@ layout: page
           {{ post.date | date: '%Y-%m-%d'}} 
           <a href="{{ post.url }}" title="{{ post.excerpt | remove: '<p>' | remove: '</p>' }}">{{ post.title }}</a> 
           {% if post.update %}
-              …… <i>更新：{{ post.update }}</i>
+              …… <i>Update：{{ post.update }}</i>
           {% endif %}
         </li>
     {% endfor %}
